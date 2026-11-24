@@ -181,7 +181,7 @@ export function AboutExperience() {
         </h2>
 
         <p>
-          I'm Aryan, a full-stack developer focused on building practical web
+          I&apos;m Aryan, a full-stack developer focused on building practical web
           applications and reliable backend systems. I turn ideas into working
           products through thoughtful architecture, clean APIs, and
           problem-solving.
