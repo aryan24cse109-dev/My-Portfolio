@@ -1,0 +1,13 @@
+node_modules/
+.next/
+**/.next-build*/
+out/
+dist/
+.vercel/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+coverage/
+Thumbs.db
+Desktop.ini
