@@ -1,170 +1,115 @@
-# Aryan Agarwal — Full-Stack Developer Portfolio
+# Aryan Agarwal — Developer Portfolio
 
 <p align="center">
-  <a href="https://my-portfolio-bhumatrix.vercel.app">
-    <strong>🌐 Live Portfolio</strong>
-  </a>
+  <a href="https://my-portfolio-bhumatrix.vercel.app"><strong>Live Portfolio ↗</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/aryan24cse109-dev/My-Portfolio">
-    <strong>GitHub Repository</strong>
-  </a>
+  <a href="https://github.com/aryan24cse109-dev/My-Portfolio"><strong>Source Code</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/aryan-agarwal-7829b4297/">
-    <strong>LinkedIn</strong>
-  </a>
+  <a href="https://www.linkedin.com/in/aryan-agarwal-7829b4297/"><strong>LinkedIn</strong></a>
 </p>
 
-A production-deployed developer portfolio built to present software projects, engineering experience, technical skills, open-source contributions, and professional contact information.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15-black?logo=next.js" alt="Next.js 15" />
+  <img src="https://img.shields.io/badge/React-19-149ECA?logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss" alt="Tailwind CSS 4" />
+  <img src="https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel" alt="Vercel" />
+</p>
 
-The application follows a component-driven architecture using **Next.js App Router, React, TypeScript, and Tailwind CSS 4**. It combines server-rendered pages with client-side interactions, API routes, external service integrations, and a centralized data layer.
+A personal developer portfolio built to showcase software projects, engineering experience, technical capabilities, and open-source contributions.
+
+Designed around a **Swiss Editorial** visual direction, the application combines structured layouts, typography-driven presentation, interactive project case studies, and a full-stack Next.js architecture.
+
+The goal is simple: present the work, the engineering behind it, and the decisions that turn ideas into working software.
 
 ---
 
-## Table of Contents
+## Portfolio Preview
 
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Technology Stack](#technology-stack)
-- [Application Structure](#application-structure)
-- [Core Features](#core-features)
-- [Application Routes](#application-routes)
-- [System Workflows](#system-workflows)
-- [API Architecture](#api-architecture)
-- [External Integrations](#external-integrations)
-- [UI and Motion Architecture](#ui-and-motion-architecture)
-- [SEO and Metadata](#seo-and-metadata)
-- [Security and Reliability](#security-and-reliability)
-- [Environment Configuration](#environment-configuration)
-- [Local Development](#local-development)
-- [Build and Validation](#build-and-validation)
-- [Deployment](#deployment)
-- [Documentation](#documentation)
-- [Future Improvements](#future-improvements)
+<p align="center">
+  <a href="https://my-portfolio-bhumatrix.vercel.app">
+    <strong>Explore the Live Website →</strong>
+  </a>
+</p>
+
+### Portfolio Video
+
+Watch the portfolio walkthrough to explore the interface, development workflow, and implemented features.
+
+<p align="center">
+  <a href="https://youtu.be/ATjcGIBfIBc">
+    <img src="https://img.shields.io/badge/▶_Watch_Portfolio_Showcase-YouTube-red?style=for-the-badge&logo=youtube" alt="Watch portfolio showcase on YouTube" />
+  </a>
+</p>
+
+> Replace `YOUR_VIDEO_ID` with your actual YouTube video ID after publishing the video.
 
 ---
 
 ## Overview
 
-The portfolio is designed as a developer-focused presentation layer rather than a static landing page.
+This portfolio is more than a collection of static profile sections. It brings together project case studies, GitHub activity, technical experience, and professional contact functionality in one application.
 
-It provides a structured view of:
+### What's Inside
 
-- Professional introduction and technical profile.
-- Skills grouped by engineering domain.
-- Full-stack and software development projects.
-- Project architecture, implementation workflows, and technical challenges.
-- Technical experience, training, and hackathon participation.
-- GitHub profile information and contribution activity.
-- Resume viewing and downloading.
-- A server-validated contact form with email delivery.
-
-The application uses a dark editorial design system, responsive layouts, reusable UI components, optimized project imagery, and motion-based interactions.
-
-**Production URL:**  
-https://my-portfolio-bhumatrix.vercel.app
+- **Developer Profile** — Introduction, background, and engineering interests.
+- **Skills & Technologies** — Structured technical skills across frontend, backend, data, and integrations.
+- **Project Case Studies** — Project overviews, architecture, workflows, features, challenges, and implementation details.
+- **Experience** — Technical experience, hackathons, and collaborative development.
+- **GitHub Activity** — Public repositories, contribution information, and profile data.
+- **Resume Integration** — View and download the latest resume.
+- **Contact System** — Server-side contact form with email delivery through Resend.
+- **Responsive Interface** — Layouts designed for desktop, tablet, and mobile.
+- **Motion Preferences** — Interface animations with reduced-motion support.
 
 ---
 
-## Architecture
+## Engineering Stack
 
-The project follows a **Next.js full-stack application architecture**.
+| Layer | Technologies |
+|---|---|
+| Framework | Next.js 15, React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4, Custom CSS |
+| Animation | Motion for React |
+| Icons | Lucide React |
+| Server Runtime | Node.js |
+| API Architecture | Next.js Route Handlers |
+| External APIs | GitHub REST API, GitHub GraphQL API |
+| Email Service | Resend |
+| Deployment | Vercel |
+| Version Control | Git, GitHub |
 
-Instead of maintaining a separate frontend and backend deployment, the application uses Next.js for both the presentation layer and server-side API endpoints.
+### Architecture
 
-### High-Level Architecture
+The application uses Next.js as both its frontend framework and server-side application layer. It does not require a separate Express server or application database.
 
 ```mermaid
 flowchart TD
-    U[Portfolio Visitor] --> V[Vercel Deployment]
-    V --> N[Next.js Application]
+    A[Portfolio Visitor] --> B[Vercel]
+    B --> C[Next.js Application]
 
-    N --> R[App Router]
-    R --> P[Server-rendered Pages]
-    R --> C[Client Components]
-    R --> API[API Routes]
+    C --> D[App Router]
+    D --> E[Server Components]
+    D --> F[Client Components]
+    D --> G[Route Handlers]
 
-    P --> D[Centralized Data Layer]
-    C --> UI[Reusable UI Components]
+    E --> H[Centralized Content Data]
+    F --> I[Reusable UI Components]
 
-    API --> G[GitHub API]
-    API --> E[Resend Email API]
+    G --> J[GitHub REST API]
+    G --> K[GitHub GraphQL API]
+    G --> L[Resend Email API]
 
-    D --> AS[Static Assets]
-    UI --> AS
-
-    G --> GH[GitHub Profile and Activity]
-    E --> IN[Contact Inbox]
+    J --> M[Profile and Repositories]
+    K --> N[Contribution Activity]
+    L --> O[Contact Inbox]
 ```
 
-### Architectural Layers
-
-| Layer | Responsibility |
-|---|---|
-| Presentation | Page layouts, responsive UI, navigation, and visual components |
-| Routing | File-system-based routing through the Next.js App Router |
-| Client interaction | Form state, navigation interactions, animations, and dynamic UI |
-| Server/API | Contact form processing and GitHub dashboard data |
-| Data | Centralized project, experience, skills, and site configuration |
-| Integrations | GitHub REST/GraphQL APIs and Resend |
-| Deployment | Production hosting and server environment configuration through Vercel |
-
-### Rendering Strategy
-
-The application uses a combination of server and client components.
-
-- **Server Components:** Used by default for route-level rendering and server-side functionality.
-- **Client Components:** Used where browser-side interaction, state, animation, or event handling is required.
-- **Route Handlers:** Handle server-side API requests without exposing private credentials to the browser.
-- **Static Assets:** Images, icons, project screenshots, and resume files are served from the public directory.
-
-This separation keeps API credentials on the server while allowing interactive user experiences in the browser.
-
----
-
-## Technology Stack
-
-### Frontend
-
-| Technology | Purpose |
-|---|---|
-| Next.js 15 | Full-stack React framework and App Router |
-| React 19 | Component-based UI development |
-| TypeScript | Static typing and maintainable application code |
-| Tailwind CSS 4 | Utility-first styling |
-| Custom CSS | Design tokens, responsive layouts, and visual effects |
-| Motion for React | Declarative UI animations and transitions |
-| Lucide React | Icon system |
-| Next Image | Image optimization and responsive image rendering |
-
-### Backend and Server Runtime
-
-| Technology | Purpose |
-|---|---|
-| Next.js Route Handlers | Server-side API endpoints |
-| Node.js | Server runtime |
-| Fetch API | External API communication |
-| Resend | Transactional email delivery |
-| GitHub REST API | Public profile and repository information |
-| GitHub GraphQL API | Contribution calendar and contribution statistics |
-
-### Infrastructure and Tooling
-
-| Technology | Purpose |
-|---|---|
-| Vercel | Production hosting and deployment |
-| npm | Dependency management |
-| ESLint | Code quality and linting |
-| TypeScript Compiler | Static type checking |
-| Git and GitHub | Version control and source management |
-
----
-
-## Application Structure
+### Application Structure
 
 ```text
 My-Portfolio/
-│
-├── README.md
 │
 ├── docs/
 │   ├── ASSET_MAP.md
@@ -185,36 +130,26 @@ My-Portfolio/
     │       └── Aryan-Agarwal-CV.pdf
     │
     ├── src/
-    │   │
     │   ├── app/
     │   │   ├── api/
     │   │   │   ├── contact/
     │   │   │   │   └── route.ts
     │   │   │   └── github/
     │   │   │       └── route.ts
-    │   │   │
     │   │   ├── projects/
     │   │   │   └── [slug]/
-    │   │   │
     │   │   ├── about/
     │   │   ├── skills/
     │   │   ├── experience/
     │   │   ├── github/
     │   │   ├── contact/
-    │   │   │
     │   │   ├── layout.tsx
     │   │   ├── page.tsx
+    │   │   ├── globals.css
     │   │   ├── sitemap.ts
-    │   │   ├── robots.ts
-    │   │   └── globals.css
+    │   │   └── robots.ts
     │   │
     │   ├── components/
-    │   │   ├── site-shell.tsx
-    │   │   ├── site-header.tsx
-    │   │   ├── site-footer.tsx
-    │   │   ├── home-intro.tsx
-    │   │   └── ...
-    │   │
     │   ├── data/
     │   │   ├── site.ts
     │   │   ├── projects.ts
@@ -226,475 +161,253 @@ My-Portfolio/
     ├── .env.example
     ├── package.json
     ├── next.config.ts
-    ├── postcss.config.mjs
     └── tsconfig.json
+│
+└── README.md
 ```
 
-*The tree highlights the main architectural areas; some component and configuration files are omitted for brevity.*
-
-### Important Directories
-
-**`src/app/`**
-
-Contains application routes, layouts, global styles, metadata, and server-side route handlers.
-
-**`src/components/`**
-
-Contains reusable UI components such as the site header, footer, navigation, page sections, and motion-related components.
-
-**`src/data/`**
-
-Provides a centralized content layer. Project details, profile configuration, skills, social links, and experience records are maintained independently of the page components.
-
-**`src/lib/`**
-
-Contains reusable server-side logic, including GitHub API integration, data transformation, and caching.
-
-**`public/`**
-
-Stores static assets such as project screenshots, profile images, brand assets, icons, and the downloadable resume.
+*The structure highlights the primary application modules. Additional components and configuration files are omitted for readability.*
 
 ---
 
-## Core Features
+## Selected Projects
 
-### 1. Developer Landing Page
+The portfolio includes detailed case studies documenting the problem, approach, implementation workflow, technology choices, and engineering challenges behind each project.
 
-The homepage introduces the developer through a structured hero section and provides navigation to the main portfolio sections.
+### 01. DealLens
 
-Implementation highlights:
+**Document Comparison & AI-Assisted Change Analysis**
 
-- Responsive hero layout.
-- Motion-based entrance animations.
-- Reusable navigation and page components.
-- Project and experience previews.
-- Direct navigation to detailed sections.
+Compare business agreement revisions, identify meaningful changes, and prepare clarification drafts.
 
-### 2. Skills Showcase
+- Deterministic document comparison.
+- PDF text extraction.
+- Rule-based change classification and severity.
+- AI-assisted impact interpretation.
+- Structured response validation.
+- Editable communication drafts.
+- PDF, text, and JSON reports.
 
-Technical skills are organized into categories:
+**Stack:** React · Node.js · Express · PostgreSQL · Prisma · Groq · Zod
 
-- Programming Languages
-- Frontend Development
-- Backend Development
-- Databases and Data
-- API and AI Integrations
-- Development Tools
+[Repository](https://github.com/aryan24cse109-dev/DealLens) · [Live Application](https://deal-lens-ten.vercel.app) · [Demo](https://youtu.be/XoIwsZcT97A)
 
-Skill information is maintained in the centralized `src/data/site.ts` file.
+### 02. Wealthra AI
 
-### 3. Project Case Studies
+**Business Finance & Invoice Management Platform**
 
-Project content is driven by structured records in `src/data/projects.ts`.
+A business workspace for managing clients, invoices, payments, communication, and receivables.
 
-Each project can contain:
+- Business and client roles.
+- Invoice lifecycle management.
+- Invoice PDF generation.
+- QR-based sandbox payment workflows.
+- Signed payment webhook verification and idempotency.
+- Real-time messaging with WebSockets.
+- Receivables analytics.
+- Hindi/Hinglish assistant workflows.
 
-- Project overview and problem statement.
-- Technical solution.
-- Technology stack.
-- Development workflow.
-- Implemented features.
-- Engineering challenges.
-- Technical limitations.
-- Screenshots and visual galleries.
-- Repository and live deployment links.
+**Stack:** React · Express 5 · PostgreSQL · Prisma · WebSockets · PDFKit · Razorpay Sandbox
 
-Dynamic project detail pages use the project slug:
+[Repository](https://github.com/aryan24cse109-dev/Wealthra-ai) · [Live Application](https://wealthra-ai.vercel.app) · [Demo](https://youtu.be/mG45OiztM1I)
 
-```text
-/projects/[slug]
-```
+### 03. IntelliLandAI
 
-This avoids maintaining a separate hardcoded page for every project.
+**Document Processing & GIS Review Prototype**
 
-### 4. Experience and Hackathons
+Process scanned land records, extract structured information, review discrepancies, and connect records with GIS parcel information.
 
-The experience section is powered by `src/data/experience.ts`.
+- Scanned document processing.
+- Hindi OCR workflow.
+- Structured field extraction.
+- Reference-data comparison.
+- Human discrepancy review.
+- GIS parcel visualization.
+- Audit history.
 
-It presents technical training, hackathon participation, team responsibilities, project involvement, and recorded outcomes.
+**Stack:** React · FastAPI · Python · PaddleOCR · PostgreSQL · PostGIS · Leaflet
 
-### 5. GitHub Activity Dashboard
+[Repository](https://github.com/aryan24cse109-dev/intellilandAI) · [Live Application](https://intelliland-auvb9qa8u-bhumatrix.vercel.app/login) · [Demo](https://youtu.be/6ntKG6ohBbA)
 
-The GitHub section integrates with GitHub's REST and GraphQL APIs.
+### 04. Return-Rate-Reducer
 
-It can display:
+**Return Risk Scoring Application**
 
-- Public GitHub profile information.
+Explore product-return risk factors through a deterministic weighted scoring workflow.
+
+- Six-dimensional weighted risk matrix.
+- Factor-level score breakdown.
+- FastAPI endpoints.
+- Interactive Streamlit dashboard.
+- API documentation.
+
+**Stack:** Python · FastAPI · Streamlit
+
+[Repository](https://github.com/aryan24cse109-dev/Return-Rate-Reducer) · [Live Dashboard](https://aryan2323-return-rate-reducer.hf.space/dashboard) · [API Docs](https://aryan2323-return-rate-reducer.hf.space/docs)
+
+### 05. Open-source Contributions
+
+**Collaborative Engineering — AlgoMate**
+
+Contributions to the AlgoMate open-source project across application functionality, reliability, AI integrations, and developer tooling.
+
+Selected contributions include:
+
+- AI chatbot integration and streaming improvements.
+- Dashboard authentication redirect fix.
+- Search history and bookmarks.
+- Sandboxed JavaScript execution and rate limiting.
+- GitHub Actions assignment automation.
+- Algorithm navigation and count corrections.
+
+[Upstream Repository](https://github.com/PankajSingh18/AlgoMate)
+
+---
+
+## Key Implementation Details
+
+### GitHub Activity Integration
+
+The GitHub dashboard combines public REST API data with authenticated GraphQL contribution information.
+
+**REST API**
+- Public profile information.
 - Public repositories.
-- Profile README content.
+- Profile README.
+
+**GraphQL API**
 - Contribution calendar.
-- Pull request contribution count.
-- Issue contribution count.
-- Pull request review contribution count.
-- Selected open-source pull request statuses.
+- Total contributions.
+- Pull request contributions.
+- Issue contributions.
+- Pull request review contributions.
 
-The dashboard is designed to preserve available public information even when authenticated contribution data cannot be loaded.
+The application supports partial availability: public profile information can still be displayed when authenticated contribution data is unavailable.
 
-### 6. Resume Integration
+### Contact Form Workflow
 
-The resume is served as a static PDF asset.
-
-```text
-frontend/public/resume/Aryan-Agarwal-CV.pdf
-```
-
-The configured path and filename are maintained in `src/data/site.ts`.
-
-The portfolio provides:
-
-- View Resume.
-- Download CV.
-
-The resume actions are rendered when the expected PDF file is available in the application build.
-
-### 7. Contact Form
-
-The contact form provides a server-side email submission workflow using Resend.
-
-It includes:
-
-- Name, email, subject, and message validation.
-- Email format validation.
-- Message length restrictions.
-- Hidden honeypot field.
-- Basic IP-based rate limiting.
-- Server-side email delivery.
-- Reply-to support using the visitor's submitted email address.
-- Error handling for unavailable or failed delivery.
-
-The API never sends the Resend API key to the client.
-
----
-
-## Application Routes
-
-| Route | Description |
-|---|---|
-| `/` | Homepage and developer introduction |
-| `/about` | Developer profile and background |
-| `/skills` | Technical skills and technologies |
-| `/projects` | Project listing |
-| `/projects/[slug]` | Individual project case study |
-| `/experience` | Experience and hackathon timeline |
-| `/github` | GitHub profile and activity dashboard |
-| `/contact` | Contact information and email form |
-| `/sitemap.xml` | Generated sitemap |
-| `/robots.txt` | Search engine crawling rules |
-
-The application also includes a custom not-found route.
-
----
-
-## System Workflows
-
-### 1. Contact Form Submission Flow
+The contact form uses a server-side API route and Resend for email delivery.
 
 ```mermaid
 sequenceDiagram
-    participant Visitor
-    participant Browser
-    participant NextAPI as Next.js API
-    participant Resend
-    participant Inbox
+    participant U as Visitor
+    participant B as Browser
+    participant A as Next.js API
+    participant R as Resend
+    participant I as Inbox
 
-    Visitor->>Browser: Submit contact form
-    Browser->>NextAPI: POST /api/contact
-    NextAPI->>NextAPI: Validate request payload
-    NextAPI->>NextAPI: Check honeypot and rate limit
-    NextAPI->>NextAPI: Validate required fields
-    NextAPI->>Resend: Send email request
-    Resend-->>NextAPI: Provider response
+    U->>B: Submit contact form
+    B->>A: POST /api/contact
+    A->>A: Validate fields
+    A->>A: Check honeypot and rate limit
+    A->>R: Send email request
+    R-->>A: Provider response
 
-    alt Email accepted
-        NextAPI-->>Browser: Success response
-        Resend->>Inbox: Process email delivery
-    else Provider or network failure
-        NextAPI-->>Browser: Error response
+    alt Accepted
+        A-->>B: Success
+        R->>I: Process delivery
+    else Rejected or failed
+        A-->>B: Error response
     end
 ```
 
-The server uses these environment variables:
+Implemented protections include:
+- Server-side field validation.
+- Email format validation.
+- Request size restriction.
+- Hidden honeypot field.
+- Basic IP-based rate limiting.
+- Server-only API credentials.
+- Explicit handling of provider failures.
 
-- `RESEND_API_KEY`
-- `CONTACT_EMAIL`
-- `RESEND_FROM_EMAIL`
-
-The sender address must be permitted by the Resend account. The current testing configuration can use Resend's onboarding sender when sending to the account's authorized test recipient.
-
-A successful API response means Resend accepted the request; it does not independently confirm final inbox delivery.
-
-### 2. GitHub Dashboard Flow
-
-```mermaid
-flowchart TD
-    A[Visitor opens GitHub page] --> B[Next.js GitHub API Route]
-    B --> C[GitHub Dashboard Service]
-
-    C --> D[GitHub REST API]
-    C --> E[GitHub GraphQL API]
-
-    D --> F[Profile and Repository Data]
-    D --> G[Profile README]
-    E --> H[Contribution Calendar and Counts]
-
-    F --> I[Data Transformation]
-    G --> I
-    H --> I
-
-    I --> J[Dashboard JSON Response]
-    J --> K[GitHub UI]
-```
-
-The public profile and repository information can load without an authenticated token.
-
-The contribution calendar and contribution-category counts require a server-side `GITHUB_TOKEN`.
-
-### 3. Project Content Flow
-
-```mermaid
-flowchart TD
-    A[Centralized Project Data] --> B[Projects Listing]
-    A --> C[Dynamic Project Route]
-    B --> D[Project Card]
-    C --> E[Project Case Study]
-    E --> F[Overview and Features]
-    E --> G[Technology Stack]
-    E --> H[Workflow and Challenges]
-    E --> I[Screenshots and Links]
-```
-
-Project content is maintained separately from UI components, making it easier to update project details without changing the rendering architecture.
+A successful response indicates that Resend accepted the request; it does not independently guarantee inbox delivery.
 
 ---
 
-## API Architecture
+## Design & User Experience
 
-The application currently exposes two primary server-side API routes.
-
-### `GET /api/github`
-
-**Purpose:** Retrieve GitHub dashboard information.
-
-Responsibilities:
-
-- Read requested contribution year.
-- Retrieve public GitHub profile information.
-- Retrieve public repositories.
-- Retrieve profile README content.
-- Fetch authenticated contribution data when a token is configured.
-- Optionally retrieve selected pull request statuses.
-- Return normalized dashboard data.
-
-Optional query parameters:
-
-```text
-/api/github?year=2026
-/api/github?year=2026&includePullRequests=true
-```
-
-Implementation:
-
-```text
-src/app/api/github/route.ts
-src/lib/github.ts
-```
-
-### `POST /api/contact`
-
-**Purpose:** Process portfolio contact submissions.
-
-Responsibilities:
-
-- Parse incoming JSON.
-- Reject oversized requests.
-- Validate form fields.
-- Detect automated submissions through a honeypot.
-- Apply basic request rate limiting.
-- Send email through Resend.
-- Return success or failure responses.
-
-Implementation:
-
-```text
-src/app/api/contact/route.ts
-```
-
----
-
-## External Integrations
-
-### GitHub REST API
-
-Used for:
-
-- Public profile information.
-- Public repository metadata.
-- Profile README retrieval.
-- Selected pull request status lookups.
-
-### GitHub GraphQL API
-
-Used for:
-
-- Contribution calendar.
-- Total contributions.
-- Pull request contribution count.
-- Issue contribution count.
-- Pull request review contribution count.
-
-Authenticated requests use the server-side `GITHUB_TOKEN`.
-
-### Resend
-
-Used for contact form email delivery.
-
-The server sends email requests to Resend with:
-
-- Configured sender address.
-- Destination inbox.
-- Visitor email as `reply_to`.
-- Portfolio contact subject.
-- Submitted message content.
-
-No email provider credentials are exposed through public frontend environment variables.
-
----
-
-## UI and Motion Architecture
-
-The visual system uses a dark editorial design language.
+The interface follows a **Swiss Editorial + Engineering Case-Study** design direction.
 
 ### Design Principles
 
-- Dark background surfaces.
-- Restrained blue and violet accents.
-- Clear typography hierarchy.
-- Generous spacing and negative space.
-- Low-opacity dividers.
-- Screenshot-forward project presentation.
-- Responsive layouts across desktop and mobile.
+- Warm neutral backgrounds and clean surfaces.
+- Restrained burnt-orange accent color.
+- Strong typographic hierarchy.
+- Structured editorial grids.
+- Purposeful spacing and hairline dividers.
+- Screenshot-focused project presentation.
+- Consistent responsive layouts.
+- Minimal visual decoration.
 
-### Typography
+### Motion & Interaction
 
-- Inter for body and interface text.
-- Space Grotesk for display headings.
+Motion for React and CSS transitions provide:
 
-### Motion
+- Controlled section reveals.
+- Interactive navigation.
+- Project hover states.
+- Portrait interactions.
+- Skills exploration.
+- Responsive menu transitions.
 
-Motion for React is used for controlled interface transitions and entrance effects.
-
-Examples include:
-
-- Hero content reveal.
-- Staggered text and element animations.
-- Route and section transitions.
-- Scroll-related visual effects.
-- Interactive hover and focus feedback.
-
-CSS handles routine hover and focus transitions.
-
-Reduced-motion preferences are respected so users who request reduced motion are not forced to experience unnecessary movement.
+The application respects reduced-motion preferences through system settings and its in-app motion control.
 
 ### Accessibility
 
-The interface incorporates:
-
 - Semantic HTML landmarks.
-- Skip-to-content navigation.
-- Visible keyboard focus indicators.
+- Keyboard-accessible navigation.
+- Visible focus states.
 - Descriptive image alternative text.
-- Responsive navigation behavior.
-- Escape-to-close mobile navigation.
+- Responsive touch targets.
 - Reduced-motion support.
-- Touch-friendly interactive elements.
+- Escape-to-close mobile navigation.
 
 ---
 
-## SEO and Metadata
+## Getting Started
 
-The application uses Next.js Metadata APIs and generated metadata routes.
+### Prerequisites
 
-Implemented capabilities include:
+- Node.js 20 or later.
+- npm.
+- Git.
 
-- Page titles and descriptions.
-- Canonical URLs.
-- Open Graph metadata.
-- Twitter card metadata.
-- Favicon and application icons.
-- Person and WebSite structured data.
-- Dynamic sitemap generation.
-- Robots configuration.
+### 1. Clone the repository
 
-The production origin is controlled by:
-
-```env
-NEXT_PUBLIC_SITE_URL=https://my-portfolio-bhumatrix.vercel.app
+```bash
+git clone https://github.com/aryan24cse109-dev/My-Portfolio.git
 ```
 
-This ensures absolute production URLs are generated from the deployed origin rather than a local development address.
+### 2. Navigate to the frontend
 
----
-
-## Security and Reliability
-
-Security is handled primarily at the server boundary.
-
-### Contact Form Protection
-
-- Server-side input validation.
-- Request body size restriction.
-- Email format validation.
-- Hidden honeypot field.
-- Basic IP-based request throttling.
-- Server-only Resend credentials.
-- No success response when the email provider rejects the request.
-
-### GitHub Token Protection
-
-- `GITHUB_TOKEN` is accessed only on the server.
-- It is never exposed through a `NEXT_PUBLIC_` variable.
-- Public profile and repository data remain available without the token.
-- API failures are represented through explicit unavailable states.
-
-### Caching
-
-GitHub data uses Next.js data caching with a one-hour revalidation policy.
-
-The dashboard service also maintains an in-process cache controlled by:
-
-```env
-GITHUB_CACHE_SECONDS=3600
+```bash
+cd My-Portfolio/frontend
 ```
 
-The cache has a minimum configured duration of 60 seconds.
+### 3. Install dependencies
 
-### Known Operational Limitations
+```bash
+npm install
+```
 
-- Contact form rate limiting uses an in-memory `Map`, so it is not shared across serverless instances and resets when the process restarts.
-- GitHub contribution statistics depend on a valid token and GitHub API availability.
-- Resend acceptance does not guarantee final inbox delivery; delivery events must be checked through Resend.
-- The portfolio does not use a dedicated application database because its content is maintained in structured source files and its live data comes from external APIs.
+### 4. Configure environment variables
 
----
-
-## Environment Configuration
-
-Create a local environment file:
+Create a local environment file using the example:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Configure the following variables inside `frontend/.env.local`.
+Configure the required values in `frontend/.env.local`.
 
-| Variable | Required | Description |
-|---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Recommended | Public production origin |
-| `GITHUB_TOKEN` | Optional | GitHub GraphQL contribution access |
-| `GITHUB_CACHE_SECONDS` | Optional | GitHub dashboard cache duration |
-| `RESEND_API_KEY` | For email | Resend API authentication |
-| `CONTACT_EMAIL` | For email | Destination inbox |
-| `RESEND_FROM_EMAIL` | For email | Authorized sender identity |
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Public website origin |
+| `GITHUB_TOKEN` | Authenticated GitHub contribution data |
+| `GITHUB_CACHE_SECONDS` | GitHub dashboard cache duration |
+| `RESEND_API_KEY` | Resend API authentication |
+| `CONTACT_EMAIL` | Contact form destination |
+| `RESEND_FROM_EMAIL` | Authorized sender identity |
 
 Example:
 
@@ -709,49 +422,9 @@ CONTACT_EMAIL=
 RESEND_FROM_EMAIL=
 ```
 
-**Important:**
+Keep private credentials out of source control. Never expose API keys through `NEXT_PUBLIC_` variables.
 
-- Never commit `.env.local`.
-- Never expose API keys using `NEXT_PUBLIC_` variables.
-- Use a valid Resend sender identity.
-- Configure production environment variables in Vercel separately from local environment files.
-- Redeploy after changing production environment variables.
-
----
-
-## Local Development
-
-### Prerequisites
-
-- Node.js 20 or later.
-- npm.
-- Git.
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/aryan24cse109-dev/My-Portfolio.git
-```
-
-### 2. Navigate to the Frontend
-
-```bash
-cd My-Portfolio/frontend
-```
-
-### 3. Install Dependencies
-
-```bash
-npm install
-```
-
-### 4. Configure Environment Variables
-
-Create `.env.local` using `.env.example` as a reference.
-
-Add only the credentials required for the integrations you want to test.
-
-### 5. Start the Development Server
+### 5. Run the development server
 
 ```bash
 npm run dev
@@ -765,133 +438,100 @@ http://localhost:3000
 
 ---
 
-## Build and Validation
+## Development Scripts
 
-The project includes the following validation scripts:
+Run these commands from the `frontend/` directory.
 
-### TypeScript Validation
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Create the production build |
+| `npm run start` | Start the production server |
+| `npm run lint` | Run ESLint |
+| `npm run typecheck` | Run TypeScript validation |
 
-```bash
-npm run typecheck
-```
-
-Runs TypeScript without emitting compiled files.
-
-### ESLint
+Before deployment, validate the application:
 
 ```bash
 npm run lint
-```
-
-Checks source files for linting and code-quality issues.
-
-### Production Build
-
-```bash
+npm run typecheck
 npm run build
 ```
-
-Creates the optimized Next.js production build.
-
-### Production Preview
-
-```bash
-npm run start
-```
-
-Starts the production server after a successful build.
 
 ---
 
 ## Deployment
 
-The portfolio is deployed on **Vercel**.
+The application is deployed on **Vercel**.
 
-**Live Application:**  
-https://my-portfolio-bhumatrix.vercel.app
+**Production URL:**  
+[my-portfolio-bhumatrix.vercel.app](https://my-portfolio-bhumatrix.vercel.app)
 
-### Deployment Configuration
-
-The application is located inside the `frontend/` directory.
-
-When configuring the Vercel project:
+### Vercel Configuration
 
 | Setting | Value |
 |---|---|
-| Framework Preset | Next.js |
+| Framework | Next.js |
 | Root Directory | `frontend` |
 | Install Command | `npm install` |
 | Build Command | `npm run build` |
 | Output Directory | Next.js default |
 
-### Production Environment Variables
+Configure production environment variables through the Vercel project settings.
 
-Configure the required variables through:
+After changing environment variables, trigger a new deployment.
 
-```text
-Vercel Dashboard
-    → Project
-    → Settings
-    → Environment Variables
-```
+### Post-deployment Checks
 
-Add the relevant variables for the Production environment.
-
-After configuration changes, trigger a new deployment.
-
-### Post-deployment Verification
-
-- Verify all application routes.
-- Test responsive layouts.
+- Verify application routes and responsive layouts.
+- Test project detail pages and external links.
 - Verify resume viewing and downloading.
 - Test contact form submission.
 - Check Resend delivery events.
-- Verify GitHub profile and contribution data.
-- Check canonical metadata, sitemap, and robots output.
-- Inspect browser console and server logs.
+- Verify GitHub dashboard availability.
+- Inspect browser console and deployment logs.
+
+---
+
+## Engineering Notes & Limitations
+
+A few implementation details are intentionally documented rather than hidden:
+
+- GitHub contribution statistics require a valid server-side token.
+- Contact form rate limiting currently uses an in-memory store and is not shared across serverless instances.
+- Resend accepting a message does not guarantee final inbox delivery.
+- The portfolio content is maintained in structured TypeScript data files; there is no dedicated application database.
+- Payment workflows and other integrations in individual case studies are documented with their actual sandbox/prototype limitations.
+- AI-assisted outputs in projects should be reviewed by humans where decisions have legal or operational consequences.
 
 ---
 
 ## Documentation
 
-Additional engineering documentation is maintained in the `docs/` directory.
-
-| Document | Description |
+| File | Purpose |
 |---|---|
-| [ASSET_MAP.md](docs/ASSET_MAP.md) | Brand assets, project screenshots, and image references |
-| [CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) | Updating project, profile, and experience content |
-| [DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) | Colors, typography, spacing, motion, and accessibility |
-| [DEPLOYMENT.md](docs/DEPLOYMENT.md) | Environment setup, integrations, and deployment instructions |
+| [DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) | Visual language, typography, layout, and motion |
+| [CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) | Updating profile, project, and experience content |
+| [ASSET_MAP.md](docs/ASSET_MAP.md) | Images, screenshots, and brand assets |
+| [DEPLOYMENT.md](docs/DEPLOYMENT.md) | Environment configuration and deployment |
 
 ---
 
-## Future Improvements
-
-Potential engineering improvements include:
-
-- Shared rate limiting through a distributed store.
-- More detailed email delivery observability.
-- Automated integration tests for API routes.
-- End-to-end tests for important user workflows.
-- Improved GitHub API resilience and monitoring.
-- Performance monitoring and real-user metrics.
-- Automated accessibility checks in CI.
-- Continuous integration for type checking, linting, and production builds.
-
----
-
-## Author
+## Connect
 
 **Aryan Agarwal**  
-Full-Stack Developer
-
-- Portfolio: https://my-portfolio-bhumatrix.vercel.app
-- GitHub: https://github.com/aryan24cse109-dev
-- LinkedIn: https://www.linkedin.com/in/aryan-agarwal-7829b4297/
-- YouTube: https://www.youtube.com/@AryanAgarwal-t6e
-
----
+Full-Stack Developer · Backend Engineering · Software Development
 
 <p align="center">
-  <strong>Designed and engineered with a focus on useful software, clean architecture, and practical engineering.</strong>
+  <a href="https://my-portfolio-bhumatrix.vercel.app">Portfolio</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/aryan24cse109-dev">GitHub</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/aryan-agarwal-7829b4297/">LinkedIn</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.youtube.com/@AryanAgarwal-t6e">YouTube</a>
+</p>
+
+<p align="center">
+  <sub>Designed with intention. Built with code. Improved through iteration.</sub>
 </p>
