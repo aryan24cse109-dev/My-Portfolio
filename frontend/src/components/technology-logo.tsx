@@ -386,7 +386,7 @@ export function TechnologyLogo({ name }: { name: string }): ReactNode {
         <span className="technology-logo brand-github" aria-hidden="true">
           <svg viewBox="0 0 24 24">
             <path
-              fill="#FFFFFF"
+              fill="#181717"
               d="M12 .9a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.14.69-3.8-1.33-3.8-1.33-.5-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.97 2.1 3.13 1.5.1-.72.4-1.2.72-1.48-2.5-.28-5.14-1.25-5.14-5.56 0-1.23.44-2.23 1.16-3.02-.12-.29-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.15 3.08-1.15.61 1.55.23 2.69.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.65 5.28-5.17 5.56.4.35.76 1.04.76 2.1v3.1c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .9Z"
             />
           </svg>
@@ -397,7 +397,7 @@ export function TechnologyLogo({ name }: { name: string }): ReactNode {
       return (
         <span className="technology-logo brand-vercel" aria-hidden="true">
           <svg viewBox="0 0 36 36">
-            <path d="M18 6L32 30H4L18 6z" fill="#FFFFFF" />
+            <path d="M18 6L32 30H4L18 6z" fill="#000000" />
           </svg>
         </span>
       );

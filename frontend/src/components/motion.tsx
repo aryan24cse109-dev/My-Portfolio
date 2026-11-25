@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll } from "motion/react";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { Sparkles } from "lucide-react";
@@ -104,6 +105,15 @@ export function Reveal({
 
 export function RouteTransition({ children }: { children: ReactNode }) {
   const reduce = useEffectiveMotion();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Jump to the top instantly on navigation. The global `scroll-behavior: smooth`
+    // otherwise animates this scroll and can swallow the first click on a nav link
+    // (the page moves between mousedown and mouseup). The opacity/slide transition
+    // below is untouched, so the visual route transition is preserved.
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
 
   return (
     <motion.div

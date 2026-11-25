@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion, type Variants } from "motion/react";
 import { useEffectiveMotion } from "@/components/motion";
 
 const sequence: Variants = {
   hidden: {},
-  visible: { transition: { delayChildren: 0.08, staggerChildren: 0.13 } },
+  visible: { transition: { delayChildren: 0.08, staggerChildren: 0.12 } },
 };
 
 const reveal: Variants = {
@@ -19,15 +19,29 @@ const reveal: Variants = {
 export function HomeIntro() {
   const reduce = useEffectiveMotion();
   return <section className="intro-screen" aria-labelledby="intro-title">
-    <div className="intro-ambient" aria-hidden="true"><span /><span /><span /></div>
     <div className="intro-grid-lines" aria-hidden="true" />
-    <motion.div className="intro-content" variants={sequence} initial={reduce ? false : "hidden"} animate="visible">
-      <motion.div className="intro-mark" variants={reveal} aria-hidden="true"><Image src="/brand/aryan-monogram.png" width={34} height={34} alt="" /></motion.div>
-      <motion.p className="intro-eyebrow" variants={reveal}>ARYAN AGARWAL <span>·</span> SOFTWARE / 01</motion.p>
-      <motion.h1 id="intro-title" variants={reveal}>Thoughtful systems.<br /><span>Useful software.</span></motion.h1>
-      <motion.p className="intro-description" variants={reveal}>A portfolio of full-stack products, backend engineering, and the decisions behind the work.</motion.p>
-      <motion.div variants={reveal}><Link className="intro-start" href="/about">LET’S START <ArrowRight size={17} aria-hidden="true" /></Link></motion.div>
-      <motion.div className="intro-foot" variants={reveal}><span>FULL-STACK DEVELOPMENT</span><span>BACKEND ENGINEERING</span><span>KOTA, INDIA</span></motion.div>
-    </motion.div>
+    <div className="intro-layout">
+      <motion.div className="intro-copy" variants={sequence} initial={reduce ? false : "hidden"} animate="visible">
+        <motion.span className="eyebrow" variants={reveal}><i /> ARYAN AGARWAL · SOFTWARE / 01</motion.span>
+        <motion.h1 id="intro-title" variants={reveal}>Thoughtful systems.<br /><span>Useful software.</span></motion.h1>
+        <motion.p className="intro-deck" variants={reveal}>A portfolio of full-stack products, backend engineering, and the decisions behind the work — documented as engineering case studies.</motion.p>
+        <motion.div className="intro-actions" variants={reveal}>
+          <Link className="action-link primary" href="/projects">Explore the work <ArrowRight size={17} aria-hidden="true" /></Link>
+          <Link className="action-link secondary" href="/about">About me <ArrowUpRight size={16} aria-hidden="true" /></Link>
+        </motion.div>
+        <motion.div className="intro-meta" variants={reveal}>
+          <span><b>FOCUS</b> Full-stack / Backend</span>
+          <span><b>BASED</b> Kota, India</span>
+          <span><b>STATUS</b> Open to work</span>
+        </motion.div>
+      </motion.div>
+      <motion.aside className="intro-plate" variants={reveal} aria-label="Portrait">
+        <span className="intro-plate-index" aria-hidden="true">PORTFOLIO — 2026</span>
+        <div className="intro-plate-frame">
+          <Image src="/images/profile/aryan-hero.png" alt="Portrait of Aryan Agarwal" fill priority sizes="(max-width: 760px) 90vw, 460px" />
+        </div>
+        <div className="intro-plate-caption"><span>ARYAN AGARWAL</span><span>FULL-STACK DEV</span></div>
+      </motion.aside>
+    </div>
   </section>;
 }

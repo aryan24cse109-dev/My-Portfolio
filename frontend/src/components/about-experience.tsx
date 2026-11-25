@@ -200,8 +200,8 @@ export function AboutExperience() {
       >
         <div className="about-portrait-frame">
           <Image
-            src="/images/profile/aryan-secondary.png"
-            alt="Portrait of Aryan Agarwal"
+            src="/images/profile/aryan-workspace.png"
+            alt="Aryan Agarwal at his development workspace"
             fill
             priority
             sizes="(max-width: 760px) 78vw, 34vw"

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, type CSSProperties } from "react";
+import { motion } from "motion/react";
 import { skills } from "@/data/site";
 import { TechnologyLogo } from "@/components/technology-logo";
+import { useEffectiveMotion } from "@/components/motion";
 
 const tones = ["blue", "violet", "ice", "steel"] as const;
 const patterns = [
@@ -51,6 +53,7 @@ const descriptions: Record<string, string> = {
 
 export function SkillsOrbit() {
   const [selected, setSelected] = useState<string | null>(null);
+  const reduce = useEffectiveMotion();
   const technologies = skills.flatMap((group) =>
     group.items.map((name) => ({ name, category: group.title }))
   );
@@ -65,6 +68,8 @@ export function SkillsOrbit() {
           const duration = 4.8 + ((index * 3) % 5) * 0.7;
           // Negative delays so every orb starts at a distinct point in its cycle immediately
           const delay = -(((index * 1.7) % 6) + 0.3);
+          // Orbs enter from alternating left/right edges, then gather into the grid
+          const fromLeft = index % 2 === 0;
 
           const style = {
             "--orb-duration": `${duration.toFixed(2)}s`,
@@ -72,26 +77,34 @@ export function SkillsOrbit() {
           } as CSSProperties;
 
           return (
-            <div
-              className={`technology-orb-track ${pattern}`}
+            <motion.div
+              className="technology-orb-cell"
               key={technology.name}
-              style={style}
+              initial={reduce ? false : { opacity: 0, x: fromLeft ? -140 : 140 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: reduce ? 0 : 0.72,
+                delay: reduce ? 0 : Math.min(index * 0.05, 1.4),
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
-              <button
-                className={`technology-orb tone-${tones[index % tones.length]} size-${size} ${
-                  selected === technology.name ? "is-selected" : ""
-                }`}
-                type="button"
-                aria-label={`${technology.name}, ${technology.category}`}
-                aria-pressed={selected === technology.name}
-                onClick={() =>
-                  setSelected((current) => (current === technology.name ? null : technology.name))
-                }
-              >
-                <TechnologyLogo name={technology.name} />
-                <span className="technology-name">{technology.name}</span>
-              </button>
-            </div>
+              <div className={`technology-orb-track ${pattern}`} style={style}>
+                <button
+                  className={`technology-orb tone-${tones[index % tones.length]} size-${size} ${
+                    selected === technology.name ? "is-selected" : ""
+                  }`}
+                  type="button"
+                  aria-label={`${technology.name}, ${technology.category}`}
+                  aria-pressed={selected === technology.name}
+                  onClick={() =>
+                    setSelected((current) => (current === technology.name ? null : technology.name))
+                  }
+                >
+                  <TechnologyLogo name={technology.name} />
+                  <span className="technology-name">{technology.name}</span>
+                </button>
+              </div>
+            </motion.div>
           );
         })}
       </div>
@@ -104,7 +117,7 @@ export function SkillsOrbit() {
           {selected
             ? descriptions[selected] ??
               `${selected} appears in the project stacks and implementation workflows documented across this portfolio.`
-            : "A project-grounded view of the technologies used across interfaces, APIs, data workflows, and integrations. Click any orb to view context."}
+            : "A project-grounded view of the technologies used across interfaces, APIs, data workflows, and integrations. Select any orb to view context."}
         </p>
       </div>
 

@@ -20,11 +20,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const jsonLd = { "@context": "https://schema.org", "@type": "Person", name: site.name, jobTitle: site.role, ...(site.url ? { url: site.url } : {}), sameAs: [site.github, site.linkedin, site.youtube], alumniOf: { "@type": "CollegeOrUniversity", name: "Rajasthan Technical University, Kota" } };
   const websiteLd = { "@context": "https://schema.org", "@type": "WebSite", name: "Aryan Agarwal Portfolio", ...(site.url ? { url: site.url } : {}), description: site.description };
   const fontVariables = { "--font-inter": '"Inter"', "--font-space": '"Space Grotesk"' } as CSSProperties;
-  return <html lang="en"><head>
+  return <html lang="en" suppressHydrationWarning><head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
     {/* Runtime font loading keeps production compilation independent of the external font service. */}
     {/* eslint-disable-next-line @next/next/no-page-custom-font */}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  </head><body id="top" style={fontVariables}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, websiteLd]).replace(/</g, "\\u003c") }} /><SiteShell><main id="main">{children}</main></SiteShell></body></html>;
+  </head><body id="top" style={fontVariables} suppressHydrationWarning><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, websiteLd]).replace(/</g, "\\u003c") }} /><SiteShell><main id="main">{children}</main></SiteShell></body></html>;
 }
